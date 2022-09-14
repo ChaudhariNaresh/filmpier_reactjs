@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable operator-linebreak */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Divider,
   List,
@@ -50,6 +50,10 @@ const Sidebar = ({ setMobileOpen }) => {
   const classes = useStyles();
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>
